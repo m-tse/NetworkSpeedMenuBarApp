@@ -3,6 +3,7 @@ import ServiceManagement
 
 struct ContentView: View {
     @EnvironmentObject var speedTest: SpeedTestManager
+    @State private var launchOnLogin = SMAppService.mainApp.status == .enabled
 
     private let intervalOptions = [5, 10, 15, 30, 60]
 
@@ -90,18 +91,18 @@ struct ContentView: View {
                     .frame(width: 100)
                 }
 
-                Toggle("Launch on login", isOn: Binding(
-                    get: { SMAppService.mainApp.status == .enabled },
-                    set: { newValue in
+                Toggle("Launch on login", isOn: $launchOnLogin)
+                    .onChange(of: launchOnLogin) { newValue in
                         do {
                             if newValue {
                                 try SMAppService.mainApp.register()
                             } else {
                                 try SMAppService.mainApp.unregister()
                             }
-                        } catch {}
+                        } catch {
+                            launchOnLogin = SMAppService.mainApp.status == .enabled
+                        }
                     }
-                ))
                 .font(.caption)
                 .foregroundColor(.secondary)
             }
