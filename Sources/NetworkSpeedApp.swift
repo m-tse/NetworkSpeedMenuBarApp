@@ -19,7 +19,7 @@ struct NetworkSpeedApp: App {
         let font = NSFont.monospacedDigitSystemFont(ofSize: 14, weight: .medium)
         let attrs: [NSAttributedString.Key: Any] = [
             .font: font,
-            .foregroundColor: NSColor.headerTextColor,
+            .foregroundColor: NSColor.black,
         ]
         let attrStr = NSAttributedString(string: text, attributes: attrs)
         let size = attrStr.size()
