@@ -17,7 +17,7 @@ A lightweight macOS menu bar app that shows your internet speed at a glance, pow
 ## Install
 
 ```bash
-brew install m-tse/speedmenubar/speedmenubar
+brew install m-tse/networkspeedmenubar/networkspeedmenubar
 ```
 
 ## Requirements
@@ -28,7 +28,7 @@ brew install m-tse/speedmenubar/speedmenubar
 ## Build from source
 
 ```bash
-git clone https://github.com/m-tse/SpeedMenuBarApp.git
+git clone https://github.com/m-tse/NetworkSpeedMenuBarApp.git
 cd SpeedMenuBarApp
 chmod +x build.sh
 ./build.sh
