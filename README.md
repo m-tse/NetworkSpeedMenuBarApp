@@ -1,4 +1,4 @@
-# Speed Menu Bar App
+# Network Speed Menu Bar App
 
 A lightweight macOS menu bar app that shows your internet speed at a glance, powered by [speed.cloudflare.com](https://speed.cloudflare.com).
 
@@ -29,7 +29,7 @@ brew install m-tse/networkspeedmenubar/networkspeedmenubar
 
 ```bash
 git clone https://github.com/m-tse/NetworkSpeedMenuBarApp.git
-cd SpeedMenuBarApp
+cd NetworkSpeedMenuBarApp
 chmod +x build.sh
 ./build.sh
 open "Network Speed.app"
