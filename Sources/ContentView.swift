@@ -25,16 +25,22 @@ struct ContentView: View {
 
             Divider()
 
-            // Test now button
-            Button(action: { speedTest.runSpeedTest() }) {
+            // Test now / Stop button
+            Button(action: {
+                if speedTest.isRunning {
+                    speedTest.stopTest()
+                } else {
+                    speedTest.runSpeedTest()
+                }
+            }) {
                 HStack {
-                    Image(systemName: "bolt.fill")
-                    Text(speedTest.isRunning ? "Testing..." : "Test Now")
+                    Image(systemName: speedTest.isRunning ? "stop.fill" : "bolt.fill")
+                    Text(speedTest.isRunning ? "Stop" : "Test Now")
                 }
                 .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
-            .disabled(speedTest.isRunning)
+            .tint(speedTest.isRunning ? Color.red.opacity(0.7) : .accentColor)
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
 

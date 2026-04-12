@@ -249,7 +249,11 @@ class SpeedTestManager: ObservableObject {
         menuBarTitle = parts.isEmpty ? "⇅" : parts.joined(separator: " ")
     }
 
-    func cancel() {
+    func stopTest() {
         currentSession?.invalidateAndCancel()
+        currentSession = nil
+        isRunning = false
+        phase = ""
+        updateMenuBarTitle()
     }
 }
