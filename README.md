@@ -21,13 +21,13 @@ If you're the kind of person who visits [fast.com](https://fast.com) multiple ti
 ## Install
 
 ```bash
-brew install m-tse/networkspeedmenubar/networkspeedmenubar
+brew install m-tse/speedcheck/speedcheck
 ```
 
 ## Update
 
 ```bash
-brew update && brew upgrade --cask networkspeed
+brew update && brew upgrade --cask speedcheck
 ```
 
 ## Requirements
